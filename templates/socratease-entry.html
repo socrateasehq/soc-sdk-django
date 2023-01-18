@@ -1,27 +1,50 @@
-
 {{ payload_string|json_script:"payload-data" }}
 
 <script>
-  var soc_force_version = "{{ soc_version }}";
+    var soc_force_version = "{{ soc_version }}";
 </script>
 <script src="https://cdn.socratease.co/socratease.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
 <script>
+    const allowedCs = [
+        "mcq_1",
+        "short_text_answer",
+        "mca",
+        "voice_input",
+        "comprehension_passage",
+        "question_pool",
+        "answer_any",
+        "document_render",
+        "single_line_input",
+    ];
+    const options = {
+        ui: { navbar: { brand_name: "Your Website" } },
+        cms: {
+            contentPieces: {
+                showSections: ["quiz", "coding_challenge"],
+                units: {
+                    showScreenByScreen: true,
+                    cardActions: {
+                        threeDots: ["clone"],
+                        onCard: ["preview", "settings", "delete"],
+                    },
+                    all: {
+                        isEnabledExcelImport: true,
+                    },
+                    quiz: {
+                        allowedCs: allowedCs,
+                        excludeSettings: ["visible", "accessLevel", "maxAttempts"],
+                    },
+                },
+            },
+        },
+    };
 
-
-  const options = {
-    ui: { navbar: { brand_name: "Your Website" } }
-  };
-
-
-  window.addEventListener("socLibLoad", () => {
-    const jsonPayload = JSON.parse(document.getElementById('payload-data').textContent);
-    const hmacPayload = "{{ hmac_payload }}"
-    const clientId = "{{ client_id }}"
-
-    Socratease.init(clientId, jsonPayload, hmacPayload, options);
-  });
-
-
+    window.addEventListener("socLibLoad", () => {
+        const jsonPayload = JSON.parse(document.getElementById("payload-data").textContent);
+        const hmacPayload = "{{ hmac_payload }}";
+        const clientId = "{{ client_id }}";
+        Socratease.init(clientId, jsonPayload, hmacPayload, options);
+    });
 </script>
 <div id="soc-main-app"></div>
