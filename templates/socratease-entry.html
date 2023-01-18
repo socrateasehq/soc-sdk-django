@@ -1,0 +1,27 @@
+
+{{ payload_string|json_script:"payload-data" }}
+
+<script>
+  var soc_force_version = "{{ soc_version }}";
+</script>
+<script src="https://cdn.socratease.co/socratease.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+<script>
+
+
+  const options = {
+    ui: { navbar: { brand_name: "Your Website" } }
+  };
+
+
+  window.addEventListener("socLibLoad", () => {
+    const jsonPayload = JSON.parse(document.getElementById('payload-data').textContent);
+    const hmacPayload = "{{ hmac_payload }}"
+    const clientId = "{{ client_id }}"
+
+    Socratease.init(clientId, jsonPayload, hmacPayload, options);
+  });
+
+
+</script>
+<div id="soc-main-app"></div>

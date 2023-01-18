@@ -1,13 +1,13 @@
-=================
-django-helloworld
-=================
+==============================================
+Socratease SDK Integration in a Django Project
+==============================================
 
-A Django '`Hello World <https://en.wikipedia.org/wiki/%22Hello,_World!%22_program>`_' program example.
+A Django project which shows the working of the Socratease SDK
 
 Installation
 ============
 
-You need install the pre-requirements for run this Hello World example.
+You need install the pre-requirements for run this project.
 
 Update repositories of available packages to install, with
 the following command:
@@ -104,3 +104,7 @@ the *Django Admin Interface* like this:
    :alt: Django Admin Interface running
 
    Django Admin Interface running
+
+Once the project is up and running, you can go to the URL http://127.0.0.1:8000/assessments/cms/home to see how the
+Socratease SDK works. You can change the parameters in the payload which the SDK accepts in app/views.py, and
+templates/socratease-entry.html

@@ -11,6 +11,10 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+from dotenv import load_dotenv
+
+dotenv_path = os.path.join(os.path.dirname(__file__), '.env')
+load_dotenv(dotenv_path)
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -21,6 +25,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'matxp6k!wbkmdlk)97)ew2qr%&9nr=n#v_-+v#yel4^r&czf7q'
+
+SOC_CLIENT_ID = os.environ.get('SOC_CLIENT_ID')
+SOC_CLIENT_SECRET = os.environ.get('SOC_CLIENT_SECRET')
+SOC_VERSION = os.environ.get('SOC_VERSION')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -50,12 +58,14 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'helloworld.urls'
+ROOT_URLCONF = 'app.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'templates')
+            ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -68,7 +78,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'helloworld.wsgi.application'
+WSGI_APPLICATION = 'app.wsgi.application'
 
 
 # Database
