@@ -29,6 +29,9 @@ SECRET_KEY = 'matxp6k!wbkmdlk)97)ew2qr%&9nr=n#v_-+v#yel4^r&czf7q'
 SOC_CLIENT_ID = os.environ.get('SOC_CLIENT_ID')
 SOC_CLIENT_SECRET = os.environ.get('SOC_CLIENT_SECRET')
 SOC_VERSION = os.environ.get('SOC_VERSION')
+SOC_ROUTE_PREFIX = os.environ.get('SOC_ROUTE_PREFIX')
+SOC_ALLOWED_CONTENT_SCREENS = os.environ.get('SOC_ALLOWED_CONTENT_SCREENS')
+BRAND_NAME = os.environ.get('BRAND_NAME')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
