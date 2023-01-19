@@ -17,8 +17,8 @@ def socratease(request):
     payload_dict = {
         'username': 'user@gmail.com',
         'user_details': {
-            'first_name': 'first',
-            'last_name': 'last',
+            'first_name': 'First',
+            'last_name': 'Last',
             'email': 'user@gmail.com'
             },
         'route_prefix': "/assessments",
