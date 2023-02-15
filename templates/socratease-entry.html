@@ -1,5 +1,4 @@
-{{ payload_string|json_script:"payload-data" }}
-{{ soc_allowed_content_screens|json_script:"allowed-content-screens" }}
+{{ payload_string|json_script:"payload-data" }} {{ soc_allowed_content_screens|json_script:"allowed-content-screens" }}
 
 <script>
     var soc_force_version = "{{ soc_version }}";
@@ -40,6 +39,7 @@
         Socratease.init(clientId, jsonPayload, hmacPayload, options);
     });
 </script>
+<link rel="stylesheet" href="https://unpkg.com/tailwindcss@3.0.18/src/css/preflight.css" />
+
 <link rel="stylesheet" href="https://soc-core-testing.s3.amazonaws.com/statics/css/socratease-1.0.24.css" />
 <div id="soc-main-app"></div>
-
