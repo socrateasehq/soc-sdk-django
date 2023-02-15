@@ -4,7 +4,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from .helpers import generate_base64_encoded_hmac
 from .settings import SOC_CLIENT_SECRET, SOC_ALLOWED_CONTENT_SCREENS, SOC_CLIENT_ID, SOC_VERSION, SOC_ROUTE_PREFIX, \
-    BRAND_NAME
+    BRAND_NAME, SOC_API_HOST
 
 
 def index(request):
@@ -33,5 +33,7 @@ def socratease(request):
         request, 'socratease-entry.html', {
             'payload_string': payload_string, 'hmac_payload': hmac_payload,
             'soc_allowed_content_screens': soc_allowed_content_screens, 'soc_version': SOC_VERSION,
-            'soc_client_id': SOC_CLIENT_ID, 'soc_route_prefix': SOC_ROUTE_PREFIX, 'brand_name': BRAND_NAME
+            'soc_client_id': SOC_CLIENT_ID, 'soc_route_prefix': SOC_ROUTE_PREFIX, 'brand_name': BRAND_NAME,
+            'soc_api_host': SOC_API_HOST
             })
+

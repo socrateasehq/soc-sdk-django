@@ -31,6 +31,7 @@ SOC_CLIENT_SECRET = os.environ.get('SOC_CLIENT_SECRET')
 SOC_VERSION = os.environ.get('SOC_VERSION')
 SOC_ROUTE_PREFIX = os.environ.get('SOC_ROUTE_PREFIX')
 SOC_ALLOWED_CONTENT_SCREENS = os.environ.get('SOC_ALLOWED_CONTENT_SCREENS')
+SOC_API_HOST = os.environ.get('SOC_API_HOST')
 BRAND_NAME = os.environ.get('BRAND_NAME')
 
 # SECURITY WARNING: don't run with debug turned on in production!

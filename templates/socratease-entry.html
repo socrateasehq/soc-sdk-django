@@ -4,11 +4,13 @@
 <script>
     var soc_force_version = "{{ soc_version }}";
 </script>
-<script src="https://cdn.socratease.co/socratease.js"></script>
+
+<script src="https://soc-core-testing.s3.amazonaws.com/statics/js/socratease-1.0.24.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
 <script>
     const allowedCs = JSON.parse(document.getElementById("allowed-content-screens").textContent);
     const options = {
+        config: { api_host: " {{ soc_api_host }}" },
         ui: { navbar: { brand_name: "{{ brand_name }}" } },
         cms: {
             contentPieces: {
@@ -31,11 +33,13 @@
         },
     };
 
-    window.addEventListener("socLibLoad", () => {
+    window.addEventListener("load", () => {
         const jsonPayload = JSON.parse(document.getElementById("payload-data").textContent);
         const hmacPayload = "{{ hmac_payload }}";
         const clientId = "{{ soc_client_id }}";
         Socratease.init(clientId, jsonPayload, hmacPayload, options);
     });
 </script>
+<link rel="stylesheet" href="https://soc-core-testing.s3.amazonaws.com/statics/css/socratease-1.0.24.css" />
 <div id="soc-main-app"></div>
+
