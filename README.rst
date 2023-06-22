@@ -13,7 +13,7 @@ Create and enter a virtual environment
 
 ::
 
-    python -m venv virtualenv
+    python3 -m venv virtualenv
     source virtualenv/bin/activate
 
 Install pip
