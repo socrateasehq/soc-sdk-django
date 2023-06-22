@@ -25,11 +25,11 @@ def about_us(request):
 def socratease(request):
 
     payload_dict = {
-        'username': 'user@gmail.com',
+        'username': 'new_user@gmail.com',
         'user_details': {
             'first_name': 'First',
             'last_name': 'Last',
-            'email': 'user@gmail.com'
+            'email': 'new_user@gmail.com'
             },
         'route_prefix': "/assessments",
         'path': "/cms/home"

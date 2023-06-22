@@ -24,7 +24,7 @@ urlpatterns = [
     path('', views.index, name='home'),
 
     # About Us
-    path('about-us', views.about_us, name='abouts_us'),
+    path('about-us', views.about_us, name='about_us'),
 
     # Pricing
     path('pricing', views.pricing, name='pricing'),
