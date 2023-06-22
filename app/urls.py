@@ -29,7 +29,7 @@ urlpatterns = [
     # Pricing
     path('pricing', views.pricing, name='pricing'),
 
-    # To go to Socratease home page, go to /assessments/socratease/cms/home
+    # To go to Socratease home page, go to /assessments/cms/home
     re_path('assessments/*', views.socratease, name='assessments')
 
 
