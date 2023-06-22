@@ -42,3 +42,8 @@ Your Home Page on the screen, you know everything is working as expected.
 
 Once the project is up and running, you can go to the URL http://127.0.0.1:8000/assessments/cms/home to see how the
 Socratease SDK works. You can change the parameters in the .env file and see how they affect the SDK.
+
+
+This video_ shows you how to install and run the project.
+
+.. _video: https://www.loom.com/share/0af61f8690e34f5ebeae2eff7c4e9a17
