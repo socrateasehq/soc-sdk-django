@@ -9,7 +9,17 @@ from .settings import SOC_CLIENT_SECRET, SOC_ALLOWED_CONTENT_SCREENS, SOC_CLIENT
 
 def index(request):
 
-    return HttpResponse("Hello, world!")
+    return render(request, 'home.html')
+
+
+def pricing(request):
+
+    return render(request, 'pricing.html')
+
+
+def about_us(request):
+
+    return render(request, 'about-us.html')
 
 
 def socratease(request):

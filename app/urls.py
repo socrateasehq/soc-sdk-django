@@ -20,10 +20,17 @@ from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
 
-    # Hello, world!
-    path('', views.index, name='index'),
+    # Homepage
+    path('', views.index, name='home'),
 
+    # About Us
+    path('about-us', views.about_us, name='abouts_us'),
+
+    # Pricing
+    path('pricing', views.pricing, name='pricing'),
+
+    # To go to Socratease home page, go to /assessments/socratease/cms/home
     re_path('assessments/*', views.socratease, name='assessments')
 
 
-]
+    ]

@@ -38,7 +38,7 @@ Run application
     $ python manage.py runserver
 
 Then, if you go to the URL http://127.0.0.1:8000/ in your web browser, and you see
-Hello World on the screen, you know everything is working as expected.
+Your Home Page on the screen, you know everything is working as expected.
 
 Once the project is up and running, you can go to the URL http://127.0.0.1:8000/assessments/cms/home to see how the
 Socratease SDK works. You can change the parameters in the .env file and see how they affect the SDK.
